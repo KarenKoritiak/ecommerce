@@ -1,0 +1,37 @@
+<%= form_for(@producttypefield) do |f| %>
+  <% if @producttypefield.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@producttypefield.errors.count, "error") %> prohibited this producttypefield from being saved:</h2>
+
+      <ul>
+      <% @producttypefield.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :default %><br />
+    <%= f.text_field :default %>
+  </div>
+  <div class="field">
+    <%= f.label :required %><br />
+    <%= f.check_box :required %>
+  </div>
+  <div class="field">
+    <%= f.label :fieldtype_id %><br />
+    <%= f.number_field :fieldtype_id %>
+  </div>
+  <div class="field">
+    <%= f.label :producttype_id %><br />
+    <%= f.number_field :producttype_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

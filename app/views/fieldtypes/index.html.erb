@@ -1,0 +1,23 @@
+<h1>Listing fieldtypes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fieldtypes.each do |fieldtype| %>
+  <tr>
+    <td><%= fieldtype.name %></td>
+    <td><%= link_to 'Show', fieldtype %></td>
+    <td><%= link_to 'Edit', edit_fieldtype_path(fieldtype) %></td>
+    <td><%= link_to 'Destroy', fieldtype, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Fieldtype', new_fieldtype_path %>
