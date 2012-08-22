@@ -1,0 +1,14 @@
+<%= form_for(producttypefield) do |p| %>
+	<li id="<%= producttypefield.id %>">
+		<%= p.text_field :name, :placeholder => "Nome" %>
+		<%= p.text_field :fieldtype, :placeholder => "Tipo do Campo" %>
+		<%= p.text_field :defaultvalue, :placeholder => "Valor Padrão" %>
+		<%= p.check_box :required %> Obrigatório
+		
+		<% if (producttypefield.id.nil?) %>
+			<input type="button" class="producttypefield_add" value="+" />
+		<% else %>
+			<input type="button" class="producttypefield_remove" value="-" />
+		<% end %>
+	</li>
+<% end %>
